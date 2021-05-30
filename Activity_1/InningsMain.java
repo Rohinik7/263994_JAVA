@@ -28,6 +28,16 @@ class Innings{
         this.inningsname=inname;
         this.run=run;
     }
+    public void displayInningsDetails(){
+        switch(inningsname){
+            case "First":
+                System.out.printf("\nName:"+getname()+"\n"+"Scored:"+getrun()+"\n"+"Need %d to win\n",(getrun()+1));
+                break;
+            case "Second":
+                System.out.println("Name:"+getname()+"\nScored:"+getrun()+"\nMatch Ended.");
+                break;
+    }
+    }
 }
 public class InningsMain {
     public static void main(String args[]){
@@ -40,13 +50,7 @@ public class InningsMain {
         int run=in.nextInt();
         Innings e=new Innings();
         e.setVar(tname, inname, run);
-        switch(inname){
-            case "First":
-                System.out.printf("\nName:"+e.getname()+"\n"+"Scored:"+e.getrun()+"\n"+"Need %d to win\n",(e.getrun()+1));
-                break;
-            case "Second":
-                System.out.println("Name:"+e.getname()+"\nScored:"+e.getrun()+"\nMatch Ended.");
-                break;
-    }
+        e.displayInningsDetails();
+        
     }
 }
